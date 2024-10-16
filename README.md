@@ -8,3 +8,20 @@ This project is an experiment to explore whether limiting the scope of recognize
 
 - Pattern Match: Prioritizes accuracy over versatility by limiting its dictionary.
 - Plugin Architecture: User can define own action as plugin.
+
+## Pseudocode
+
+*Voice*: Binary, *Prompt*: String, *Command*: *Target* &times; *Action*, *Target*: String, *Action*: String, *Script*: String
+
+*SpeechToText*: *Voice* &rarr; *Prompt*  
+*AnalyzeSemantics*: *Prompt* &rarr; *Command*  
+*ExecuteCommand*: *Command* &rarr; *Script*  
+*TextToSpeech*: *Script* &rarr; *Voice*
+
+*Answer* = *TextToSpeech* &compfn; *ExecuteCommand* &compfn; *AnalyzeSemantics* &compfn; *SpeechToText*  
+*Answer*: *Voice* &rarr; *Voice*
+
+- SpeechToText: Julius
+- TVController: Nature Remo &or; Infrared Signal
+- Cast: Chromecast
+- TextToSpeech: VoiceVox
